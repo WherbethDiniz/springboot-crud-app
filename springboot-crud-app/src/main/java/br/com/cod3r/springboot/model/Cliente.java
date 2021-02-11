@@ -55,7 +55,7 @@ public class Cliente {
 		this.nome = nome;
 	}
 	
-	public Long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
