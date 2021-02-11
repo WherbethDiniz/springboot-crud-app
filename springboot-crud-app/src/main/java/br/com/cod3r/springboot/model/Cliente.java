@@ -18,6 +18,9 @@ public class Cliente {
 	@Column(name = "nome")
 	private String nome;
 	
+	@Column(name = "cpf")
+	private String cpf;
+	
 	@Column(name = "telefone")
 	private String telefone;
 	
@@ -28,9 +31,10 @@ public class Cliente {
 		
 	}
 
-	public Cliente(String nome, String telefone, String email) {
+	public Cliente(String nome, String cpf, String telefone, String email) {
 		super();
 		this.nome = nome;
+		this.cpf = cpf;
 		this.telefone = telefone;
 		this.email = email;
 	}
@@ -49,6 +53,14 @@ public class Cliente {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public Long getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf= cpf;
 	}
 
 	public String getTelefone() {
