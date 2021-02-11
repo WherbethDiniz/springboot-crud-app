@@ -51,6 +51,7 @@ public class ClienteController {
 				.orElseThrow(() -> new ResourceNotFoundException("Não exite o cliente com essa" + id));
 		
 		cliente.setNome(clienteDetails.getNome());
+		cliente.setCpf(clienteDetails.getCpf());
 		cliente.setTelefone(clienteDetails.getTelefone());
 		cliente.setEmail(clienteDetails.getEmail());
 		
