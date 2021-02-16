@@ -40,7 +40,7 @@ public class ClienteController {
 	@GetMapping("/clientes/{id}")
 	public ResponseEntity<Cliente> getClienteById(@PathVariable Long id) {
 		Cliente cliente = clienteRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Não exite o cliente com essa" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("Não existe cliente com id " + id));
 		return ResponseEntity.ok(cliente);
 
 	}
@@ -48,7 +48,7 @@ public class ClienteController {
 	@PutMapping("/clientes/{id}")
 	public ResponseEntity<Cliente> updateCliente(@PathVariable Long id,@RequestBody Cliente clienteDetails) {
 		Cliente cliente = clienteRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Não exite o cliente com essa" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("Não existe cliente com id " + id));
 		
 		cliente.setNome(clienteDetails.getNome());
 		cliente.setCpf(clienteDetails.getCpf());
@@ -62,7 +62,7 @@ public class ClienteController {
 	@DeleteMapping("/clientes/{id}")
 	public ResponseEntity<Map<String, Boolean>> deleteCliente(@PathVariable Long id) {
 		Cliente cliente = clienteRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Não existe cliente com esse id!" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("Não existe cliente com id " + id));
 		
 		clienteRepository.delete(cliente);
 		Map<String, Boolean> response = new HashMap<>();
