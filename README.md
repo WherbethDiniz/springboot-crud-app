@@ -33,6 +33,6 @@ GET /api/v1/clientes
 POST /api/v1/clientes
 GET /api/v1/clientes/{id}
 PUT /api/v1/clientes/{id}
-DELETE /api/v1/clientes{id}
+DELETE /api/v1/clientes/{id}
 ```
 
